@@ -1,6 +1,6 @@
 FROM openjdk:8-jre-slim
  
-COPY nbiot-gateway-efento.jar .
+COPY slave8.jar .
 COPY wait-for-it.sh .
 COPY startup.sh .
 RUN chmod u+x startup.sh wait-for-it.sh

@@ -1,0 +1,14 @@
+FROM openjdk:11
+ 
+COPY slave.jar .
+COPY wait-for-it.sh .
+COPY startup.sh .
+RUN chmod u+x startup.sh wait-for-it.sh
+ 
+ENV JENKINS_MASTER_SERVER=jenkins-master
+ENV JENKINS_MASTER_PORT=8080
+ENV JENKINS_MASTER_JNLP_PORT=50000
+ENV SLAVE_NAME=slave-java-11
+ENV JENKINS_TOKEN=b26ad819e8d4f823302e1ea4abd724e488967130b7910ea7762c4579c80852ee
+ 
+CMD ["sh", "./startup.sh"]

@@ -1,9 +1,8 @@
 FROM openjdk:11
  
 COPY slave.jar .
-COPY wait-for-it.sh .
 COPY startup.sh .
-RUN chmod u+x startup.sh wait-for-it.sh
+RUN chmod u+x startup.sh
  
 ENV JENKINS_MASTER_SERVER=jenkins-master
 ENV JENKINS_MASTER_PORT=8080

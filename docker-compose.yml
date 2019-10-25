@@ -4,6 +4,8 @@ services:
     image: jenkins/jenkins:latest
     ports:
       - "8080:8080"
+      - "50000:50000"
+      - "50001:50001"
     expose:
       - "50000"
       - "50001"
@@ -12,20 +14,20 @@ services:
   slave-java-11:
     build: slave-java-11
     environment:
-      - JENKINS_MASTER_SERVER=jenkins-master
+      - JENKINS_MASTER_SERVER=3.122.97.139
       - JENKINS_MASTER_PORT=8080
       - JENKINS_MASTER_JNLP_PORT=50000
-      - JENKINS_TOKEN=ebce2562070dae899fd59ecf5d5bac7f7095a4ef5f5212667cae7d3d2e8f7206
+      - JENKINS_TOKEN=0c8e3e8d8de756c5a049e9c13635b5cdfe1e61725de31cfe15f1a7cf48268fa2
       - SLAVE_NAME=slave-java-11
     depends_on:
       - jenkins-master
   slave-java-8:
     build: slave-java-8
     environment:
-      - JENKINS_MASTER_SERVER=jenkins-master
+      - JENKINS_MASTER_SERVER=3.122.97.139
       - JENKINS_MASTER_PORT=8080
-      - JENKINS_MASTER_JNLP_PORT=50000
-      - JENKINS_TOKEN=8a7b4385b0f5358b819f4fb261c7557a1f3b672eaf65d10c31c6f2dd9f44be39
+      - JENKINS_MASTER_JNLP_PORT=50001
+      - JENKINS_TOKEN=5603473e822fc48418d7e2d3a153bd651a5cc30e6a15e7c362da20b20d4ba6b7
       - SLAVE_NAME=slave-java-8
     depends_on:
       - jenkins-master

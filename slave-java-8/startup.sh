@@ -1,3 +1,3 @@
 #!/usr/bin/sh
   
-java -jar slave8.jar -jnlpUrl http://${JENKINS_MASTER_SERVER}:${JENKINS_MASTER_PORT}/computer/${SLAVE_NAME}/slave-agent.jnlp -secret ${JENKINS_TOKEN} -workDir /opt
+java -jar slave.jar -jnlpUrl http://${JENKINS_MASTER_SERVER}:${JENKINS_MASTER_PORT}/computer/${SLAVE_NAME}/slave-agent.jnlp -secret ${JENKINS_TOKEN} -workDir /opt

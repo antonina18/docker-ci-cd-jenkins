@@ -1,0 +1,8 @@
+bitbucket
+blueocean
+git
+jclouds-jenkins
+pipeline-build-step
+pipeline-input-step
+pipeline-model-definition
+yet-another-docker-plugin

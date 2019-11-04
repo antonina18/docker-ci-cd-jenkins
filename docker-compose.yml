@@ -8,9 +8,11 @@ services:
       - "8080:8080"
       - "50000:50000"
       - "50001:50001"
+      - "50002:50002"
     expose:
       - "50000"
       - "50001"
+      - "50002"
     volumes:
       - jenkins-data:/var/jenkins
   slave-java-11:
@@ -31,6 +33,16 @@ services:
       - JENKINS_MASTER_JNLP_PORT=50001
       - JENKINS_TOKEN=5603473e822fc48418d7e2d3a153bd651a5cc30e6a15e7c362da20b20d4ba6b7
       - SLAVE_NAME=slave-java-8
+    depends_on:
+      - jenkins-master
+  slave-android:
+    build: slave-android
+    environment:
+      - JENKINS_MASTER_SERVER=3.122.97.139
+      - JENKINS_MASTER_PORT=8080
+      - JENKINS_MASTER_JNLP_PORT=50002
+      - JENKINS_TOKEN=b0ba4d14636d31570318692b2e214cfbdb6e221b5351f263bff75e2c806dd730
+      - SLAVE_NAME=slave-android
     depends_on:
       - jenkins-master
 volumes:

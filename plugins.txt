@@ -1,5 +1,6 @@
 bitbucket
 blueocean
+copyartifact
 git
 jclouds-jenkins
 pipeline-build-step
